@@ -1,0 +1,48 @@
+.github-profile{
+    margin: 20px;
+}
+.github-profile img{
+    width: 20%;
+    height: 20%;
+}
+
+.github-profile p{
+    margin: 10px;
+    font-size: 20pt;
+    padding-top: -20px;
+    text-align: center;
+}
+.name{
+    font-weight: bold;
+}
+
+.github-profile article{
+    background: #ffffff;
+    border: 1px solid #999999 ;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.github-profile article a{
+    height: 32px;
+    border-radius: 5px;
+    border: 2px solid #da552f;
+    background: none;
+    margin-top: 20px;
+    color: #da552f;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.github-profile article a:hover{
+   
+    background-color:#da1919;
+    color: #fff;
+   
+}
