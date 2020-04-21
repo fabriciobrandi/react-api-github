@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Header from './components/Header';
 
 import Route from './routes';
-import Footer from './components/FooterC';
+import Footer from './components/Footer';
 
 
 function App (){
@@ -11,7 +11,7 @@ function App (){
       <div className="App">
         <Header/>
         <Route/>
-        {/* <Footer/> */}
+        <Footer/>
        </div>
     );
 }
