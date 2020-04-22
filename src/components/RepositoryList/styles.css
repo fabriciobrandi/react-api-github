@@ -1,29 +1,42 @@
-.product-list{
-    max-width: 700px;
-    margin: 1px auto 10px;
-    padding: 0 0px;
+.column {
+    flex: 1;
+    padding-right: 3%;
+    padding-left: 3%;
+  }
+
+  .list-repo-item{
+    flex: 1;
+    text-align: left;
+  }
+ 
+.header {
+    background-color: #f1f1f1;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
 }
-
-
-.product-list .actions{
+.row {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 0px;
-}
-.product-list .actions button{
- padding: 10px;
- border-radius: 5px;
- border: 0;
- background:#da552f ;
- color: #fff;
- font-size: 16px;
- font-weight: bold;
- cursor: pointer;
-}
-.product-list .actions button[disabled]{
-    opacity: 0.4;
+  }
+  
+@media (max-width: 805px) {
+  .row {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    align-content:space-around;
+  }
 }
 
-.product-list .actions button:hover{
-    opacity: 0.7;
-} 
+.sumary{
+    width: 100%;
+    padding: 1% 2%;
+    background: #fff;
+    box-sizing: border-box;
+    margin: 2% 0 3% 0%;
+    box-shadow: 0 2px 4px rgba(0,0,0, .2);
+  }
+
+.sumary li{
+    padding-bottom: 5px;
+    margin: 5px;
+}

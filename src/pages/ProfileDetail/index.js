@@ -1,4 +1,4 @@
-import React, {useState,useEffect,useLayoutEffect } from 'react'
+import React, {useState,useEffect } from 'react'
 
 import api from '../../services/api'
 import Card from '../../components/Card';
@@ -14,32 +14,61 @@ export default function ProfileDetail(props){
     const [repositories, setRepositories] = useState([]);
     const {login} = useParams();
 
-    useLayoutEffect( () => {
+    useEffect( () => {
         async function getUser() {
-            const result = await api.get(`/users/${login}`);
-            setProfile(result.data);
+
+            try{
+                const result = await api.get(`/users/${login}`)
+                setProfile(result.data === null  ?  console.log("pan") :result.data );
+            } 
+            catch(error){
+                setProfile({name: "invalido"})
+                console.log(error)
+           };
         }
         getUser();
     },[login]);
 
-    useLayoutEffect( () => {
+    useEffect( () => {
         async function getRepos() {
-            const result = await api.get(`/users/${login}/repos`);
-            setRepositories(result.data);
+            try{
+                const result = await api.get(`/users/${login}/repos`)
+                setRepositories(result.data);
+            } 
+            catch(error){
+                console.log(error)
+           };
+        
     }
     getRepos();
 },[login]);
-
-    return  (  
-        <div>
+    
+    if(profile.name === "invalido"){
+        return  (  
+            <div className="root-detail">
+                <div className="navigation">
+                    <p><Link className="button" to={`/`}>Voltar</Link></p>
+                </div>
+                <div style={{textAlign:'center'}} ><h1>Nao Foi encontrado nenhum usuario com o login informado</h1></div>
+            </div>
+            );
+        }
+        else if(profile.name !== null)
+        {
+        return  (  
+            <div className="root-detail">
             <div className="navigation">
                 <p><Link className="button" to={`/`}>Voltar</Link></p>
             </div>
-            <div>    
+            <div className="profile-detail">    
                 <Card {...profile}/>
-                <RepositoryList repositories={repositories}/>
             </div>
+            <RepositoryList repositories={repositories}/>
         </div>
-    );
+        );
+    }
+
+        
+    
   
 }

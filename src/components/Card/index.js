@@ -1,35 +1,35 @@
 import React from 'react'
 import './styles.css'
 import {Link} from 'react-router-dom'
-import logo from './logo.png'; // Tell webpack this JS file uses this image
 
 export default function Card(props){
 
     const profile = props;
-    let cardDetail
+    let cardDetail,className
+    
     if(!profile.name){
-        cardDetail= <p className="link"> <Link to={`/ProfileDetail/${profile.login}`}>Visualizar perfil</Link></p>
+        cardDetail= <p className="user-link"> <Link to={`/ProfileDetail/${profile.login}`}>Visualizar perfil</Link></p>
     }else{
+        className = "profile-detail"
         cardDetail = 
         <div>
-            <p>Nome:  <strong>{profile.name}</strong></p>
-            <p>Bio:  <strong>{profile.bio}</strong></p>
-            <p>Localidade: <strong>{profile.location}</strong></p>
+            <ul>
+                <li>Nome:  <strong>{profile.name}</strong> </li>
+                <li>Bio:  <strong>{profile.bio}</strong>  </li>
+                <li>Localidade: <strong>{profile.location}</strong>  </li>
+            </ul>
         </div>
     }
-
-
     return(
-        <div className="card">
-            <div className="image">
-                <img src= {profile.avatar_url}  />
-              
+        <div className={className}>
+            <div className="user-avatar-img">
+                <img src= {profile.avatar_url} alt="avatar usuario github"  />
             </div>
-            <div className="content">
-                <div className="title">
+            <div className="user-content">
+                <div className="user-login">
                     <h1>{profile.login}</h1>
                 </div>
-                <div className="info">
+                <div className="user-info">
                     {cardDetail}
                 </div>
             </div>

@@ -8,7 +8,7 @@ export default function CardList(props){
        
         return(
           <section className="card-list">
-              {profiles.map(profile => <Card key={profile.id} {...profile}/>)}  
+              {profiles.map(profile => <div className="card" key={profile.id} ><Card key={profile.id} {...profile}/></div> )}  
           </section>
         )
     }
