@@ -5,6 +5,8 @@ import { useHistory } from "react-router-dom";
 export default function Form() {
     let history = useHistory();
 
+
+
     const [userName, setuserName] = useState('');
 
     function handleClick() {
@@ -13,12 +15,12 @@ export default function Form() {
    }
 
    return(
-        <div className="Form">
+        <section className="Form">
             <form  >
                 <input onChange={e => setuserName(e.target.value)} type="text" placeholder="Preencha um usuário" value={userName} />
-                <button onClick={handleClick}>Procurar</button>
+                <button className="button" onClick={handleClick}>Procurar</button>
             </form>
-        </div>
+        </section>
     )
 
     }

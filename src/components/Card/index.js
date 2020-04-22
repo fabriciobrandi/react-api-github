@@ -1,13 +1,14 @@
 import React from 'react'
 import './styles.css'
 import {Link} from 'react-router-dom'
+import logo from './logo.png'; // Tell webpack this JS file uses this image
 
 export default function Card(props){
 
     const profile = props;
     let cardDetail
     if(!profile.name){
-        cardDetail= <Link to={`/ProfileDetail/${profile.login}`}>Visualizar perfil</Link>
+        cardDetail= <p className="link"> <Link to={`/ProfileDetail/${profile.login}`}>Visualizar perfil</Link></p>
     }else{
         cardDetail = 
         <div>
@@ -19,13 +20,19 @@ export default function Card(props){
 
 
     return(
-        <div className="github-profile">
-            <article>
-                <img src= {profile.avatar_url} alt="imagem"/>
-                <p>{profile.login}</p>
-                {cardDetail}
-                    {/* <Link to={`/ProfileDetail/${profile.login}`}>Visualizar perfil</Link> */}
-            </article>
+        <div className="card">
+            <div className="image">
+                <img src= {profile.avatar_url}  />
+              
+            </div>
+            <div className="content">
+                <div className="title">
+                    <h1>{profile.login}</h1>
+                </div>
+                <div className="info">
+                    {cardDetail}
+                </div>
+            </div>
         </div>
     )
 }

@@ -1,49 +1,68 @@
-.github-profile{
-    margin: 20px;
-}
-.github-profile img{
-    width: 20%;
-    height: 20%;
-}
 
-.github-profile p{
-    margin: 10px;
-    font-size: 20pt;
-    
-    padding-top: -20px;
-    text-align: center;
-}
-.name{
-    font-weight: bold;
-}
-
-.github-profile article{
-    background: #ffffff;
-    border: 1px solid #999999 ;
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.github-profile article a{
-    height: 32px;
-    border-radius: 5px;
-    border: 2px solid #da552f;
-    background: none;
-    margin-top: 20px;
-    color: #da552f;
-    font-weight: bold;
-    font-size: 16px;
-    text-decoration: none;
+  .text--medium {
+    font-size: 1.6rem;
+    line-height: 40.6rem;
+    font-weight: 400;
+    color: #007a99;
+  }
+  
+  .card {
     display: flex;
-    justify-content: center;
+    border-radius: 10px;
+    /* flex-direction: row; */
+    flex-direction: column;
+    background-color: #f4f4f5;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);
+    /* cursor: pointer; */
+    transition: all 0.1s ease 0s;
+    margin: 1vh;
+
+  }
+  
+  .card:hover {
+    transform: translateX(-6px);
+    background-color: #f3efef;
+  }
+  
+  
+  .image img {
+    width: 13vh;
+    border-radius: 50%;    
+    margin: 1.4em ;
+  }
+  
+  .content {
+    margin: 10px;
+  }
+  
+  .title {
+    margin : 1rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: rgb(3, 72, 82);
+    word-wrap: break-word;
+  }
+  
+  .info {
+    display: flex;
+    align-self: end;
     align-items: center;
-
-}
-
-.github-profile article a:hover{
-   
-    background-color:#da1919;
-    color: #fff;
-   
-}
+  }
+  
+  .link {
+    margin-left: auto;
+    padding: 5px 20px;
+    border-radius: 20px;    
+    background-color: #0a8ebb;
+    filter: brightness(95%);
+    text-align: center;
+    cursor: pointer;
+  }
+  .link:hover {
+    filter: brightness(90%);
+  }
+  .link a {
+   text-decoration: none;
+   text-align: center;
+   color: aliceblue;
+  }

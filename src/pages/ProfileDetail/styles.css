@@ -1,12 +1,11 @@
-.Form{
+.navigation{
     margin: 1px auto 10px;
-    text-align: center;
-    line-height: 35px;
+    line-height: 50px;
     border-radius: 3px;
     box-shadow: 4px -1px 3px 5px #d9e8ec73;
     background-color: #0a8ebb;
+    height: 50px;
 }
-.Form input{ 
-    margin: 20px;
-    height: 24px;
+.navigation a{
+    text-decoration: none;
 }

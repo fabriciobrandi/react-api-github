@@ -14,7 +14,7 @@ export default function Main() {
 },[]);
 
 async function LoadUsers  (lastUserId = 0){
-    const response = await api.get(`/users?since=${lastUserId}&per_page=5`)
+    const response = await api.get(`/users?since=${lastUserId}&per_page=10`)
     const maxValueOfId = Math.max(...response.data.map(o => o.id), 0);
     setProfiles([...profiles, ...response.data])
     setLastUserId(maxValueOfId)
@@ -24,20 +24,16 @@ function nextPage(){
     LoadUsers(lastUserId)
 }
 
-
-
     return (
-      <div className="App" >
-         {/* <Form onSubmit={this.searchProfile}/> */}
+      <main>
          <Form />
          <CardList profiles={profiles} />  
         
          <div className="actions">
-            {/* <button disabled={lastUser === 0} onClick={this.prevPage}>Anterior</button> */}
-            <button onClick={nextPage}>Ver mais 5..</button>
+            <button className="button" onClick={nextPage}>Carregar mais..</button>
         </div>
 
-      </div>
+      </main>
     );
   
 }

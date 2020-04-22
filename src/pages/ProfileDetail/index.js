@@ -4,6 +4,8 @@ import api from '../../services/api'
 import Card from '../../components/Card';
 import RepositoryList from '../../components/RepositoryList';
 
+import './styles.css'
+
 import {Link,useParams} from 'react-router-dom'
 
 export default function ProfileDetail(props){
@@ -29,11 +31,15 @@ export default function ProfileDetail(props){
 },[login]);
 
     return  (  
-    <div>
-        <p><Link className="voltar" to={`/`}>Voltar</Link></p>
-        <Card {...profile}/>
-        <RepositoryList repositories={repositories}/>
-    </div>
+        <div>
+            <div className="navigation">
+                <p><Link className="button" to={`/`}>Voltar</Link></p>
+            </div>
+            <div>    
+                <Card {...profile}/>
+                <RepositoryList repositories={repositories}/>
+            </div>
+        </div>
     );
   
 }

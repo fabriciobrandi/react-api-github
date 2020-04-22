@@ -2,23 +2,21 @@
 .actions{
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
+    margin: 30px;
 }
-.actions button{
- padding: 10px;
- border-radius: 5px;
- border: 0;
- background:#da552f ;
- color: #fff;
- font-size: 16px;
- font-weight: bold;
- cursor: pointer;
+.button{
+    padding: 15px;
+    border-radius: 5px;
+    border: 0;
+    background: #0b9ed0;
+    box-shadow: 1px 1px 3px 0px rgba(130, 122, 144, 0.5);
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
 
 }
-.actions button[disabled]{
-    opacity: 0.4;
-}
 
-.actions button:hover{
+.button:hover{
     opacity: 0.7;
 } 
