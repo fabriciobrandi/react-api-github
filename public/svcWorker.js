@@ -41,8 +41,8 @@ const NORMALIZED_PREFIX = '/__normalized/';
 
 // A list of "files" whose URLs you want to normalize.
 const FILES_TO_NORMALIZE = [
-//   '/ProfileDetail',
-//   '/users',
+   '/ProfileDetail/defunkt',
+   '/users',
   // ...anything else...
 ];
 
@@ -50,8 +50,12 @@ function normalizeRequestUrl(request) {
   // Convert the request.url string into a URL object,
   // so that we can get the pathname cleanly.
   const url = new URL(request.url);
+  console.log("URL" )
+    console.log("URL" +  url.pathname(url) )
 
   for (const file of FILES_TO_NORMALIZE) {
+    console.log("URL" )
+    console.log("URL" +  url.pathname(file) )
     if (url.pathname.startsWith(file)) {
       // If we have a match, then normalize the URL by using our
       // standard prefix along with the specific file name.
@@ -70,6 +74,8 @@ self.addEventListener('fetch', event => {
     // https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/
     event.respondWith(async function() {
       const requestKey = normalizeRequestUrl(event.request);
+
+      console.log("Request key" + requestKey)
   
       const cache = await caches.open('runtime-cache');
       const cachedResponse = await caches.match(requestKey);
@@ -95,6 +101,7 @@ self.addEventListener('fetch', event => {
 function fetchAndUpdate(request){
 
     deleteStaleAssets(request.url, ["/ProfileDetail/defunkt", "https://api.github.com/users/defunkt","http://localhost:3000/ProfileDetail/defunkt"]);
+    
 
     return fetch(request)
     .then(function(res){
@@ -102,15 +109,16 @@ function fetchAndUpdate(request){
             return caches.open(CACHE_NAME)
             .then(function(cache){
                
-                caches.keys().then(function(keyList) {
-                    return Promise.all(keyList.map(function(key) {
-                         console.log(key)
-                        if(key.url == "1")
-                            return caches.delete(key);
-                    }));
-                });
+                // caches.keys().then(function(keyList) {
+                //     return Promise.all(keyList.map(function(key) {
+                //          console.log("urlkey" + key)
+                //         if(key.url == "1")
+                //             return caches.delete(key);
+                //     }));
+                // });
                 
-                
+                console.log("path")
+                console.log(cache)
                 return cache.put(request,res.clone())
                 .then(function(){
                     return res

@@ -6,7 +6,7 @@ export default function Card(props){
 
     const profile = props;
     let cardDetail,className
-    
+
     if(!profile.name){
         cardDetail= <p className="user-link"> <Link to={`/ProfileDetail/${profile.login}`}>Visualizar perfil</Link></p>
     }else{
@@ -21,9 +21,9 @@ export default function Card(props){
         </div>
     }
     return(
-        <div className={className}>
+        <div data-testid="card-div" className={className}>
             <div className="user-avatar-img">
-                <img src= {profile.avatar_url} alt="avatar usuario github"  />
+                <img data-testid="img-avatar" src= {profile.avatar_url} alt="avatar usuario github"  />
             </div>
             <div className="user-content">
                 <div className="user-login">

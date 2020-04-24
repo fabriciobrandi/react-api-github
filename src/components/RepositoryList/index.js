@@ -21,8 +21,6 @@ export default function RepositoryList(props){
     }
     const repositories = props.repositories;
     const languages = getTotalLanguages(repositories);
-    
-    console.log(languages);
 
     return(
     <div className="row">
@@ -30,19 +28,20 @@ export default function RepositoryList(props){
         <h3>Resumo</h3>
             <div className="sumary">
                 <ul>
-                    <li><strong>Tamanho total: </strong> {repositories.reduce((prev,next) => prev + next.size,0)} bytes</li>
-                    <li><strong>Issues abertos:</strong> {repositories.reduce((prev,next) => prev + next.open_issues_count,0)}</li>
-                    <li><strong>Linguagens: </strong>
-                    {languages.map(language =>(
-                    <ul key={language.Key}>
-                       <li>  {language.Language} <strong> ({language.qty})</strong> </li>
-                        
-                    </ul>
-                       ))}
+                    <li><strong>Tamanho total: </strong> <i data-testid="sum-sizes"> {repositories.reduce((prev,next) => prev + next.size,0)} bytes</i></li>
+                    <li><strong>Issues abertos:</strong> <i data-testid="sum-issues"> {repositories.reduce((prev,next) => prev + next.open_issues_count,0)}</i> </li>
+                    <li>
+                        <strong>Linguagens:  </strong> <i data-testid="sum-languages">
+                        {
+                        languages.map(language =>(
+                        <ul   key={language.Key}>
+                        <li>  {language.Language} <strong> ({language.qty})</strong> </li>
+                        </ul>
+                        ))}
+                        </i>
                     </li>
                 </ul>
-                </div>
-            
+            </div>
         </div>
 
         <div className="column">

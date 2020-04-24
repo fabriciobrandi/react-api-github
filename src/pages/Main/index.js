@@ -31,7 +31,9 @@ function nextPage(){
          <div className="actions">
             <button className="button" onClick={nextPage}>Carregar mais..</button>
         </div>
+
       </main>
     );
+  
 }
 
