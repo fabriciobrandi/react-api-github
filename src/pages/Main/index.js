@@ -26,7 +26,7 @@ function nextPage(){
 
     return (
       <main>
-         <Form />
+         <Form   />
          <CardList profiles={profiles} />  
          <div className="actions">
             <button className="button" onClick={nextPage}>Carregar mais..</button>
