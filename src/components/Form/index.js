@@ -9,7 +9,8 @@ export default function Form({requestSearch}) {
     function handleSubmit(e) {
         e.preventDefault();
         if(userName)
-        requestSearch()
+        if(requestSearch != null)
+            requestSearch()
         history.push(`/ProfileDetail/${userName}`)
         
    }
@@ -17,7 +18,7 @@ export default function Form({requestSearch}) {
    return(
         <section className="Form">
             <form onSubmit={e => handleSubmit(e)}>
-                <input data-testid="input-login" required onChange={e => setuserName(e.target.value)} type="text" placeholder="Preencha um usuário" value={userName} />
+                <input  required onChange={e => setuserName(e.target.value)} type="text" placeholder="Preencha um usuário" value={userName} />
                 <button data-testid="search-button" className="button" >Procurar</button>
             </form>
         </section>

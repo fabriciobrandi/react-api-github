@@ -7,6 +7,8 @@ export default function Card(props){
     const profile = props;
     let cardDetail,className
 
+
+    //A validacao de como apresentar o card é realizado verificando se o parametro name existe, apenas no profile completo apresenta este dado
     if(!profile.name){
         cardDetail= <p className="user-link"> <Link to={`/ProfileDetail/${profile.login}`}>Visualizar perfil</Link></p>
     }else{
@@ -23,7 +25,7 @@ export default function Card(props){
     return(
         <div data-testid="card-div" className={className}>
             <div className="user-avatar-img">
-                <img data-testid="img-avatar" src= {profile.avatar_url} alt="avatar usuario github"  />
+                <img data-testid="img-avatar" src= {profile.avatar_url} alt="img"  />
             </div>
             <div className="user-content">
                 <div className="user-login">

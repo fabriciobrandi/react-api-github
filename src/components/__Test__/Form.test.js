@@ -2,8 +2,6 @@ import React from 'react';
 import {render,fireEvent,cleanup} from "@testing-library/react";
 import Form from "../Form"
 import { BrowserRouter as Router } from 'react-router-dom';
-import ReactTestUtils from 'react-dom/test-utils'; // ES6
-
 
 describe('Search button', () => {
   
@@ -16,7 +14,7 @@ describe('Search button', () => {
      
       fireEvent.change(searchInput, {target:{value:"test"}})
       fireEvent.click(getByTestId('search-button'))
-      
+
       expect(requestSearch).toHaveBeenCalled();
     });
   });

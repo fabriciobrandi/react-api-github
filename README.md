@@ -8,6 +8,8 @@ O projeto `React Github` foi desenvolvido utilizando a sintaxe de Hooks introduz
 
 * Para navegaçaõ offline, foi utilizado serviceWorker com o conceito de `cache-first`, a aplicacao pode ser instalada nos navegadores se desejado
 
+* Foi utilizado o context para exibir loading no carregamento dos dados
+
 * Para chamadas de API foi utilizada a biblioteca `axios`
 
 * O componente `Card` esta sendo reutilizado em areas diferentes do site com mudanca de CSS

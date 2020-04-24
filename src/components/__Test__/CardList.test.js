@@ -3,7 +3,6 @@ import {render} from "@testing-library/react";
 import CardList from "../CardList"
 import { BrowserRouter as Router } from 'react-router-dom';
 
-
 const twoElementsList = [
   {id:1, login:"login_test1", avatar_url: "avatar1.jpg" },
   {id:2, login:"login_test2", avatar_url: "avatar2.jpg" }

@@ -33,10 +33,10 @@ export default function RepositoryList(props){
                     <li>
                         <strong>Linguagens:  </strong> <i data-testid="sum-languages">
                         {
-                        languages.map(language =>(
-                        <ul   key={language.Key}>
-                        <li>  {language.Language} <strong> ({language.qty})</strong> </li>
-                        </ul>
+                            languages.map(language =>(
+                            <ul   key={language.Key}>
+                            <li>  {language.Language} <strong> ({language.qty})</strong> </li>
+                            </ul>
                         ))}
                         </i>
                     </li>
